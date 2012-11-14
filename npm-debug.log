@@ -1,0 +1,54 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'c:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'node-pwd' ]
+2 info using npm@1.1.62
+3 info using node@v0.8.11
+4 verbose read json C:\Users\stefano.bucci\Desktop\AptanaWorkspace\everyauth\package.json
+5 warn package.json Authentication@0.0.1 No README.md file found!
+6 verbose read json C:\Users\stefano.bucci\Desktop\AptanaWorkspace\everyauth\node_modules\everyauth\package.json
+7 verbose read json C:\Users\stefano.bucci\Desktop\AptanaWorkspace\everyauth\node_modules\express\package.json
+8 verbose read json C:\Users\stefano.bucci\Desktop\AptanaWorkspace\everyauth\node_modules\jade\package.json
+9 verbose read json C:\Users\stefano.bucci\Desktop\AptanaWorkspace\everyauth\node_modules\mongodb\package.json
+10 verbose read json C:\Users\stefano.bucci\Desktop\AptanaWorkspace\everyauth\node_modules\mongoose\package.json
+11 verbose from cache C:\Users\stefano.bucci\Desktop\AptanaWorkspace\everyauth\package.json
+12 verbose readDependencies using package.json deps
+13 verbose cache add [ 'node-pwd', null ]
+14 silly cache add name=undefined spec="node-pwd" args=["node-pwd",null]
+15 verbose parsed url { pathname: 'node-pwd', path: 'node-pwd', href: 'node-pwd' }
+16 silly lockFile ea4b2906-node-pwd node-pwd
+17 verbose lock node-pwd C:\Users\stefano.bucci\AppData\Roaming\npm-cache\ea4b2906-node-pwd.lock
+18 silly lockFile ea4b2906-node-pwd node-pwd
+19 verbose addNamed [ 'node-pwd', '' ]
+20 verbose addNamed [ null, '' ]
+21 silly lockFile bf794a83-node-pwd node-pwd@
+22 verbose lock node-pwd@ C:\Users\stefano.bucci\AppData\Roaming\npm-cache\bf794a83-node-pwd.lock
+23 silly addNameRange { name: 'node-pwd', range: '', hasData: false }
+24 verbose url raw node-pwd
+25 verbose url resolving [ 'https://registry.npmjs.org/', './node-pwd' ]
+26 verbose url resolved https://registry.npmjs.org/node-pwd
+27 info trying registry request attempt 1 at 17:41:59
+28 http GET https://registry.npmjs.org/node-pwd
+29 http 404 https://registry.npmjs.org/node-pwd
+30 silly registry.get cb [ 404,
+30 silly registry.get   { server: 'CouchDB/1.2.0 (Erlang OTP/R15B)',
+30 silly registry.get     date: 'Wed, 14 Nov 2012 16:41:39 GMT',
+30 silly registry.get     'content-type': 'application/json',
+30 silly registry.get     'content-length': '52',
+30 silly registry.get     'cache-control': 'must-revalidate' } ]
+31 silly lockFile bf794a83-node-pwd node-pwd@
+32 error 404 'node-pwd' is not in the npm registry.
+32 error 404 You should bug the author to publish it
+32 error 404
+32 error 404 Maybe try 'npm search pwd'
+32 error 404
+32 error 404 Note that you can also install from a
+32 error 404 tarball, folder, or http url, or git url.
+33 error System Windows_NT 6.1.7601
+34 error command "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "node-pwd"
+35 error cwd C:\Users\stefano.bucci\Desktop\AptanaWorkspace\everyauth
+36 error node -v v0.8.11
+37 error npm -v 1.1.62
+38 error code E404
+39 verbose exit [ 1, true ]
