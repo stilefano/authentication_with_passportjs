@@ -1,5 +1,7 @@
-var mongoose = require('mongoose'),
-	hash = require('./public/javascripts/lib/node-pwd.js').hash;
+var mongoose = require('mongoose')
+	,hash = require('./public/javascripts/lib/node-pwd.js').hash
+	,passport = require('passport')
+    ,LocalStrategy = require('passport-local').Strategy;
 
 var db = mongoose.createConnection('localhost','authentication');
 
@@ -23,7 +25,7 @@ exports.registration = function(req,res){
 	res.render('registration', { title: 'Express' });
 }
 
-exports.authenticate = function(req,res) {
+exports.signing = function(req,res) {
 	
 	var pageParam = req.body;
 	
@@ -46,8 +48,9 @@ exports.authenticate = function(req,res) {
 			pageParam.hash = hash;
 			store(pageParam);
 		})	
-
-	
+	res.redirect('/');
+}
 
-		res.redirect('/');
+exports.login = function(req,res){
+	
 }
