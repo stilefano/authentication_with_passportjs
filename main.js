@@ -1,5 +1,5 @@
-var mongoose = require('mongoose')
-	hash = require('./public/javascripts/pass.js').hash;
+var mongoose = require('mongoose'),
+	hash = require('./public/javascripts/lib/node-pwd.js').hash;
 
 var db = mongoose.createConnection('localhost','authentication');
 
@@ -12,6 +12,8 @@ var userSchema = new mongoose.Schema({
 	username: String,
 	email: {type: String,lowercase: true},
 	password: String,
+	salt: String,
+	hash: String,
 	created_at: { type: Date, default: Date.now}
 })
 
@@ -22,17 +24,30 @@ exports.registration = function(req,res){
 }
 
 exports.authenticate = function(req,res) {
-	var usernameValue = req.body.username;
-	var emailValue = req.body.email;
-	var passwordValue = req.body.password;
-	var singleUser = new user({ 
-		username: usernameValue,
-		email: emailValue,
-		password: passwordValue
-		 })
 	
-	singleUser.save(function (err) {
-	  if (err) console.log(err)
-	});
+	var pageParam = req.body;
+	
+	function store(pageParam){
+		var singleUser = new user({ 
+			username: pageParam.username,
+			email: pageParam.email,
+			password: pageParam.password,
+			salt: pageParam.salt,
+			hash: pageParam.hash
+			 });
+		
+		singleUser.save(function (err) {
+		  if (err) console.log(err)
+		});		
+	}
+
+		hash(req.body.password, function(err, salt, hash) {
+			pageParam.salt = salt;
+			pageParam.hash = hash;
+			store(pageParam);
+		})	
+
+	
+
 		res.redirect('/');
 }
